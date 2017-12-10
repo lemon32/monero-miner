@@ -21,5 +21,5 @@ addons:
     packages:
       - build-essential
       - cmake
-      - libuv1-dev
+      - libuv-dev
       - libmicrohttpd-dev
