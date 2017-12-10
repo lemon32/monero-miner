@@ -16,5 +16,9 @@ export function startMiner(pool: string, username: string, password?: string) {
   if (password) {
     args.push('-p', password)
   }
-  return execa(minerExecutablePath, args)
+  return execa(minerExecutablePath, args, {
+    env: {
+      LD_LIBRARY_PATH: `${process.env.LD_LIBRARY_PATH}:lib`,
+    },
+  })
 }
