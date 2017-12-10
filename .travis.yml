@@ -8,7 +8,7 @@ node_js:
 before_install:
   - yarn global add greenkeeper-lockfile@1
   - curl http://security.ubuntu.com/ubuntu/pool/universe/libu/libuv1/libuv1-dev_1.8.0-1_amd64.deb > libuv1-dev.deb
-  - curl http://security.ubuntu.com/ubuntu/pool/main/libu/libuv1/libuv1_1.9.1-3_amd64.deb > libuv1.deb
+  - curl http://security.ubuntu.com/ubuntu/pool/universe/libu/libuv1/libuv1_1.8.0-1_amd64.deb > libuv1.deb
   - sudo apt-get install ./libuv1.deb
   - sudo apt-get install ./libuv1-dev.deb
 before_script: greenkeeper-lockfile-update
