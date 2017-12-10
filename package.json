@@ -2,7 +2,7 @@
   "name": "monero-miner",
   "version": "0.0.0-development",
   "license": "MIT",
-  "files": ["dist"],
+  "files": ["dist", "xmrig"],
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
