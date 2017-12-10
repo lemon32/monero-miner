@@ -1,0 +1,25 @@
+language: node_js
+cache: yarn
+notifications:
+  email: false
+node_js:
+  - '8'
+before_install: yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+script:
+  - yarn jest --coverage
+  - yarn compile
+after_script: greenkeeper-lockfile-upload
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
+addons:
+  apt:
+    packages:
+      - build-essential
+      - cmake
+      - libuv1-dev
+      - libmicrohttpd-dev
