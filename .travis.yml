@@ -1,10 +1,14 @@
 language: node_js
 cache: yarn
+sudo: required
 notifications:
   email: false
 node_js:
   - '8'
-before_install: yarn global add greenkeeper-lockfile@1
+before_install:
+  - yarn global add greenkeeper-lockfile@1
+  - curl http://security.ubuntu.com/ubuntu/pool/universe/libu/libuv1/libuv1-dev_1.8.0-1_amd64.deb > libuv1.deb
+  - sudo apt-get install ./libuv1.deb
 before_script: greenkeeper-lockfile-update
 script:
   - yarn jest --coverage
@@ -21,5 +25,4 @@ addons:
     packages:
       - build-essential
       - cmake
-      - libuv-dev
       - libmicrohttpd-dev
