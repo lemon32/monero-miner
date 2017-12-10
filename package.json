@@ -2,9 +2,7 @@
   "name": "monero-miner",
   "version": "0.0.0-development",
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -21,8 +19,10 @@
     "test": "run-p jest lint",
     "watch": "tsc --pretty --watch",
     "watch:test": "jest --watch",
-    "compile": "cd xmrig && rm -rf build && mkdir build && cd build && cmake .. && make",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "compile":
+      "cd xmrig && rm -rf build && mkdir build && cd build && cmake .. && make",
+    "semantic-release":
+      "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
     "@commitlint/cli": "^5.2.0",
@@ -54,11 +54,7 @@
       ".(ts)": "ts-jest"
     },
     "testRegex": "/__tests__/.*.test.ts$",
-    "moduleFileExtensions": [
-      "ts",
-      "js",
-      "json"
-    ],
+    "moduleFileExtensions": ["ts", "js", "json"],
     "testEnvironment": "node",
     "mapCoverage": true
   },
