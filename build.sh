@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -ex
 
 cd xmrig
@@ -10,6 +10,6 @@ cmake ..
 LD_RUN_PATH=lib make
 
 mkdir lib
-cp /usr/lib/x86_64-linux-gnu/lib{gnutls,uv1,curl}*.so* lib
+cp /usr/lib/x86_64-linux-gnu/lib{uv,gnutls,curl}*.so* lib
 
 rm ../.gitignore || true
