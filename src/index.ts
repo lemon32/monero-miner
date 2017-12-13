@@ -1,5 +1,5 @@
 import * as execa from 'execa'
-import { resolve } from 'path'
+import { dirname, resolve } from 'path'
 
 export const minerExecutablePath = resolve(__dirname, '../xmrig/build/xmrig')
 
@@ -18,7 +18,10 @@ export function startMiner(pool: string, username: string, password?: string) {
   }
   return execa(minerExecutablePath, args, {
     env: {
-      LD_LIBRARY_PATH: `${process.env.LD_LIBRARY_PATH}:lib`,
+      LD_LIBRARY_PATH: `${process.env.LD_LIBRARY_PATH}:${resolve(
+        dirname(minerExecutablePath),
+        'lib',
+      )}`,
     },
   })
 }
