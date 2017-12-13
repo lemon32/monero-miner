@@ -10,6 +10,6 @@ cmake ..
 LD_RUN_PATH=lib make
 
 mkdir lib
-cp /usr/lib/x86_64-linux-gnu/lib{uv,gnutls,curl}*.so* lib
+cp /usr/lib/x86_64-linux-gnu/lib{uv,gnutls,curl,microhttpd}*.so* lib
 
 rm ../.gitignore || true
