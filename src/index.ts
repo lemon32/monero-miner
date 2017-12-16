@@ -17,7 +17,6 @@ export function startMiner(
     '-k',
     '--donate-level=1',
     '--print-time=10',
-    '--max-cpu-usage=95',
     ...(additionalArgs || []),
   ]
   if (password) {
