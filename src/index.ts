@@ -12,6 +12,7 @@ export function startMiner(pool: string, username: string, password?: string) {
     '-k',
     '--donate-level=1',
     '--print-time=10',
+    '--max-cpu-usage=95',
   ]
   if (password) {
     args.push('-p', password)
